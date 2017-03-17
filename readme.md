@@ -6,7 +6,7 @@
 
 ## Description
 
-_This project uses php classes to construct and address book that allows users to add or delete a list of contacts. This project is available for review here: https://github.com/mckenro/address-book-app.git and here: https://mckenro.github.io/address-book-app/_
+_This project uses php classes to construct and address book that allows users to add or delete a list of contacts. This project is available for review here: https://github.com/mckenro/address-book-app.git _
 
 ## Specs
 
