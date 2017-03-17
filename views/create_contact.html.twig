@@ -1,10 +1,14 @@
 {% include 'head.html.twig' %}
-    <h2>You added a new contact!</h2>
-    <div class="view-contact">
-        <h3>{{ newcontact.getName }}</h3>
-        <h4><span class="prefix"> Phone: </span>{{ newcontact.getPhone }}</h4>
-        <h4><span class="prefix"> Email: </span>{{ newcontact.getEmail }}</h4>
-        <h4><span class="prefix"> Address: </span>{{ newcontact.getAddress }}</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>You added a new contact!</h2>
+        <div class="view-contact">
+            <h3>{{ newcontact.getName }}</h3>
+            <h4><span class="prefix"> Phone: </span>{{ newcontact.getPhone }}</h4>
+            <h4><span class="prefix"> Email: </span>{{ newcontact.getEmail }}</h4>
+            <h4><span class="prefix"> Address: </span>{{ newcontact.getAddress }}</h4>
+        </div>
+        <p><a class = "btn btn-primary" href='/'>View your address book</a></p>
+      </div>
     </div>
-    <p><a class = "btn btn-primary" href='/'>View your address book</a></p>
 {% include 'footer.html.twig' %}
