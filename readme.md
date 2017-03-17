@@ -1,4 +1,4 @@
-# _Address Book PHP_
+# _Address Book App_
 
 #### _Week 5 Epicodus Group Project_
 
