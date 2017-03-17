@@ -1,11 +1,4 @@
-<html>
-<head>
-    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="/css/styles.css" type="text/css">
-    <title>Address Book</title>
-</head>
-<body>
-  <div class="container-fluid">
+{% include 'head.html.twig' %}
     <h1>Address Book</h1>
     {% if contacts is not empty %}
         <h2>Here are your contacts:</h2>
@@ -21,23 +14,21 @@
     <form action='/contacts' method='post'>
         <div class = "form-group">
           <label for='name'>Contact Name</label>
-          <input id='name' class='form-control' name='name' type='text'>
+          <input id='name' class='form-control' name='name' type='text' required>
         </div>
         <div class = "form-group">
           <label for='phone'>Contact Phone</label>
-          <input id='phone' class='form-control' name='phone' type='number'>
+          <input id='phone' class='form-control' name='phone' type='number' required>
         </div>
         <div class = "form-group">
           <label for='address'>Contact Address</label>
-          <input id='address' class='form-control' name='address' type='text'>
+          <input id='address' class='form-control' name='address' type='text' required>
         </div>
           <button type='submit' class="btn btn-primary">Add Contact</button>
     </form>
 
-    <form action='/delete_contacts' method='post'>
+    <form class="bottom" action='/delete_contacts' method='post'>
         <button type='submit' class="btn btn-danger">Clear Contact List</button>
     </form>
-  </div>
-</body>
+
 {% include 'footer.html.twig' %}
-</html>
