@@ -1,41 +1,42 @@
 <html>
 <head>
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="/css/styles.css" type="text/css">
     <title>Address Book</title>
 </head>
 <body>
+  <div class="container-fluid">
     <h1>Address Book</h1>
     {% if contacts is not empty %}
-    <p>Here are your contacts:</p>
-<ul>
-    {% for contact in contacts %}
-        <li>{{ contact.getName }}</li>
-        <li>{{ contact.getPhone }}</li>
-        <li>{{ contact.getAddress }}</li>
-        <!-- add complete contact details for all contacts-->
-
-
-
-    {% endfor %}
-</ul>
-{% endif %}
-  <form action='/contacts' method='post'>
-      <div class = "form-group">
-        <label for='name'>Contact Name</label>
-        <input id='name' name='name' type='text'>
-      </div>
-      <div class = "form-group">
-        <label for='phone'>Contact Phone</label>
-        <input id='phone' name='phone' type='number'>
-      </div>
-      <div class = "form-group">
-        <label for='address'>Contact Address</label>
-        <input id='address' name='address' type='text'>
-      </div>
-        <button type='submit'>Add Contact</button>
+        <h2>Here are your contacts:</h2>
+            {% for contact in contacts %}
+            <div class="view-contact">
+                <h3>{{ contact.getName }}</h3>
+                <h4><span class="prefix"> Phone: </span>{{ contact.getPhone }}</h4>
+                <h4><span class="prefix"> Address: </span> {{ contact.getAddress }}</h4>
+            </div>
+            {% endfor %}
+    {% endif %}
+    <h2>Add New Contact</h2>
+    <form action='/contacts' method='post'>
+        <div class = "form-group">
+          <label for='name'>Contact Name</label>
+          <input id='name' class='form-control' name='name' type='text'>
+        </div>
+        <div class = "form-group">
+          <label for='phone'>Contact Phone</label>
+          <input id='phone' class='form-control' name='phone' type='number'>
+        </div>
+        <div class = "form-group">
+          <label for='address'>Contact Address</label>
+          <input id='address' class='form-control' name='address' type='text'>
+        </div>
+          <button type='submit' class="btn btn-primary">Add Contact</button>
     </form>
 
     <form action='/delete_contacts' method='post'>
-        <button type='submit'>Clear Contact List</button>
+        <button type='submit' class="btn btn-danger">Clear Contact List</button>
     </form>
+  </div>
 </body>
 </html>
